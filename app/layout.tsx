@@ -18,6 +18,8 @@ export default function RootLayout({
           <Link href="/">홈</Link>
 
           <Link href="/list">List</Link>
+
+          <Link href="/cart">Cart</Link>
         </nav>
 
         {children}

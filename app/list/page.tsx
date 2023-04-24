@@ -1,11 +1,9 @@
+"use client";
+
 import Image from "next/image";
 
 const List = () => {
   const products = ["바나나", "사과", "멜론"];
-
-  products.map(() => {
-    console.log("안녕");
-  });
 
   return (
     <div className="flex flex-col items-center justify-center h-full">
@@ -17,13 +15,18 @@ const List = () => {
             key={product}
             className="bg-slate-100 rounded-xl text-black px-5 py-3 text-center"
           >
-            <Image
-              src={`/images/${product}.jpeg`}
-              width={100}
-              height={100}
-              priority
-              alt={product}
-            />
+            <div className="w-[100px] h-[100px] relative">
+              <Image
+                src={`/images/${product}.jpeg`}
+                fill
+                sizes="100px"
+                priority
+                alt={product}
+                style={{
+                  objectFit: "contain",
+                }}
+              />
+            </div>
             {product}
           </li>
         ))}
